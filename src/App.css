@@ -1,0 +1,21 @@
+div{
+  display: flex;
+  flex-direction: column;
+}
+input {
+  margin: 20px auto;
+  height: 30px;
+  border: 2px solid black;
+  width: 50vw;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+td,
+th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+}
+
