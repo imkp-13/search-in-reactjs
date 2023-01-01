@@ -41,7 +41,7 @@ const Users = () => {
           </tr>
         </thead>
         <tbody>
-          {state.data
+          {state.data.length > 0 ? state.data
             .filter((user) => {
               return (
                 user.username.toLowerCase().includes(state.query) ||
@@ -57,7 +57,7 @@ const Users = () => {
                   <td>{user.email}</td>
                 </tr>
               );
-            })}
+            }) : <h1>No data found!</h1>}
         </tbody>
       </table>
     </div>
