@@ -41,23 +41,27 @@ const Users = () => {
           </tr>
         </thead>
         <tbody>
-          {state.data.length > 0 ? state.data
-            .filter((user) => {
-              return (
-                user.username.toLowerCase().includes(state.query) ||
-                user.name.toLowerCase().includes(state.query) ||
-                user.email.toLowerCase().includes(state.query)
-              );
-            })
-            .map((user) => {
-              return (
-                <tr>
-                  <td>{user.username}</td>
-                  <td>{user.name}</td>
-                  <td>{user.email}</td>
-                </tr>
-              );
-            }) : <h1>No data found!</h1>}
+          {state.data.length > 0 ? (
+            state.data
+              .filter((user) => {
+                return (
+                  user.username.toLowerCase().includes(state.query) ||
+                  user.name.toLowerCase().includes(state.query) ||
+                  user.email.toLowerCase().includes(state.query)
+                );
+              })
+              .map((user) => {
+                return (
+                  <tr>
+                    <td>{user.username}</td>
+                    <td>{user.name}</td>
+                    <td>{user.email}</td>
+                  </tr>
+                );
+              })
+          ) : (
+            <h1>No data found!</h1>
+          )}
         </tbody>
       </table>
     </div>
